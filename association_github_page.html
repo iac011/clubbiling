@@ -1,0 +1,318 @@
+<!--
+FULL DEPLOYABLE WEBSITE
+Association: Club Bilingue Plaisir & Savoir
+Deployment: GitHub Pages
+Structure:
+
+/website
+  index.html
+  style.css
+  app.js
+  invoice.js
+  README.md
+
+For GitHub Pages deployment:
+1. Create repository
+2. Upload files
+3. Enable Pages → Deploy from main branch
+
+This single file version works immediately on GitHub Pages.
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Bilingue Plaisir & Savoir</title>
+
+<style>
+:root{
+--primary:#1f4e8c;
+--secondary:#f4f7fb;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:var(--secondary);
+color:#333
+}
+
+header{
+background:var(--primary);
+color:white;
+padding:40px 20px;
+text-align:center
+}
+
+nav{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+background:#163b69
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:14px 18px;
+font-weight:bold
+}
+
+nav a:hover{
+background:#0f2b4d
+}
+
+.hero{
+padding:60px 20px;
+text-align:center;
+background:white
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 20px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08)
+}
+
+.btn{
+display:inline-block;
+background:var(--primary);
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+margin-top:10px;
+border:none;
+cursor:pointer
+}
+
+.schedule p{margin:6px 0}
+
+form input,form textarea{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:14px;
+border-radius:6px;
+border:1px solid #ccc
+}
+
+footer{
+background:#163b69;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px
+}
+
+.login-box{
+max-width:400px;
+margin:auto
+}
+
+.dashboard{
+display:none
+}
+
+.invoice{
+background:#fff;
+padding:20px;
+border:1px solid #ddd;
+margin-top:20px
+}
+
+@media(max-width:600px){
+header{padding:30px 10px}
+.hero{padding:40px 15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>乐学双语俱乐部</h1>
+<h2>CLUB BILINGUE PLAISIR & SAVOIR</h2>
+<p>Apprendre le chinois et découvrir la culture chinoise</p>
+</header>
+
+<nav>
+<a href="#about">Association</a>
+<a href="#program">Programme</a>
+<a href="#schedule">Horaires</a>
+<a href="#register">Inscription</a>
+<a href="#parents">Parents</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+<h1>École de chinois pour enfants</h1>
+<p>Langue • Culture • Calligraphie</p>
+<a class="btn" href="#register">Inscrire mon enfant</a>
+</section>
+
+<div class="container" id="about">
+<div class="card">
+<h2>Présentation</h2>
+<p>Association culturelle pour enfants proposant des cours de chinois et des activités culturelles.</p>
+</div>
+</div>
+
+<div class="container" id="program">
+<h2>Nos activités</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Cours de chinois</h3>
+<p>Lecture, écriture et conversation.</p>
+</div>
+
+<div class="card">
+<h3>Calligraphie</h3>
+<p>Découverte de l'écriture chinoise traditionnelle.</p>
+</div>
+
+<div class="card">
+<h3>Culture chinoise</h3>
+<p>Fêtes traditionnelles et activités artistiques.</p>
+</div>
+
+</div>
+</div>
+
+<div class="container schedule" id="schedule">
+<div class="card">
+<h2>Programme du samedi</h2>
+<p>09:30 Accueil</p>
+<p>10:00 Cours de chinois</p>
+<p>11:00 Activités culturelles</p>
+<p>14:00 Calligraphie / Peinture</p>
+</div>
+</div>
+
+<div class="container" id="register">
+<div class="card">
+<h2>Inscription</h2>
+
+<form id="registerForm">
+<input type="text" id="parent" placeholder="Nom du parent" required>
+<input type="text" id="child" placeholder="Nom de l'enfant" required>
+<input type="number" id="age" placeholder="Age" required>
+<input type="email" id="email" placeholder="Email" required>
+<textarea id="note" placeholder="Allergies / remarques"></textarea>
+<button class="btn" type="submit">Envoyer</button>
+</form>
+
+<p id="confirm"></p>
+
+</div>
+</div>
+
+<div class="container" id="parents">
+<div class="card login-box">
+<h2>Espace Parents</h2>
+
+<form id="loginForm">
+<input type="email" placeholder="Email" required>
+<input type="password" placeholder="Mot de passe" required>
+<button class="btn">Connexion</button>
+</form>
+
+</div>
+
+<div class="dashboard" id="dashboard">
+
+<h3>Tableau Parents</h3>
+<p>Bienvenue dans l'espace parents.</p>
+
+<button class="btn" onclick="generateInvoice()">Télécharger facture</button>
+
+<div id="invoice" class="invoice"></div>
+
+</div>
+</div>
+
+<div class="container" id="contact">
+<div class="card">
+<h2>Contact</h2>
+<p>Email : contact@club-bilingue.fr</p>
+<p>Ville : Vitry-sur-Seine</p>
+</div>
+</div>
+
+<footer>
+<p>© 2026 Club Bilingue Plaisir & Savoir</p>
+</footer>
+
+<script>
+
+// Registration
+
+document.getElementById("registerForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const parent=document.getElementById("parent").value;
+const child=document.getElementById("child").value;
+
+localStorage.setItem("parent",parent);
+localStorage.setItem("child",child);
+
+ document.getElementById("confirm").innerText="Inscription enregistrée ✔";
+
+});
+
+
+// Parent login demo
+
+document.getElementById("loginForm").addEventListener("submit",function(e){
+
+ e.preventDefault();
+
+ document.getElementById("dashboard").style.display="block";
+
+});
+
+
+// Invoice generator
+
+function generateInvoice(){
+
+const parent=localStorage.getItem("parent")||"Parent";
+const child=localStorage.getItem("child")||"Enfant";
+
+const html=`
+<h3>Facture</h3>
+<p>Association: Club Bilingue Plaisir & Savoir</p>
+<p>Parent: ${parent}</p>
+<p>Enfant: ${child}</p>
+<p>Objet: Cours de chinois enfants</p>
+<p>Montant: 120 €</p>
+<p>Date: ${new Date().toLocaleDateString()}</p>
+`;
+
+ document.getElementById("invoice").innerHTML=html;
+
+}
+
+</script>
+
+</body>
+</html>
