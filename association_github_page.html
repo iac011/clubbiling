@@ -9,20 +9,17 @@
 
 <style>
 :root {
-  --primary: #0f3768;        /* 深沉专业的蓝色 */
+  --primary: #0f3768;        
   --primary-light: #1e5a9e;  
-  --accent: #f59e0b;         /* 温暖的橙黄色作为点缀 */
+  --accent: #f59e0b;         
   --accent-hover: #d97706;
-  --bg-color: #f8fafc;       /* 柔和的浅灰蓝背景 */
+  --bg-color: #f8fafc;       
   --text-main: #334155;
   --text-light: #64748b;
   --white: #ffffff;
 }
 
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+* { box-sizing: border-box; scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -32,354 +29,206 @@ body {
   line-height: 1.6;
 }
 
-/* 顶部品牌区 */
+/* 语言切换器 */
+.lang-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.9);
+  padding: 5px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1001;
+}
+.lang-switcher button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary);
+  padding: 5px 8px;
+  border-radius: 15px;
+}
+.lang-switcher button.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* 语言显示控制 */
+.lang-zh, .lang-en { display: none; }
+
 header {
   background: var(--white);
   color: var(--primary);
-  padding: 30px 20px;
+  padding: 40px 20px;
   text-align: center;
+  position: relative;
 }
+header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 2px; }
+header h2 { margin: 5px 0 10px; font-size: 1.1rem; color: var(--text-light); }
+header p { margin: 0; font-size: 0.95rem; color: var(--text-light); }
 
-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
-  letter-spacing: 2px;
-  color: var(--primary);
-}
-
-header h2 {
-  margin: 5px 0 10px;
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--text-light);
-  letter-spacing: 1px;
-}
-
-header p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--text-light);
-}
-
-/* 导航栏 */
 nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: var(--primary);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex; justify-content: center; flex-wrap: wrap;
+  background: var(--primary); position: sticky; top: 0; z-index: 1000;
 }
-
 nav a {
-  color: var(--white);
-  text-decoration: none;
-  padding: 16px 24px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background 0.3s ease;
+  color: var(--white); text-decoration: none;
+  padding: 16px 24px; font-weight: 600; font-size: 0.95rem;
 }
+nav a:hover { background: var(--primary-light); }
 
-nav a:hover {
-  background: var(--primary-light);
-}
-
-/* 主视觉区 (Hero) */
 .hero {
-  padding: 100px 20px;
-  text-align: center;
+  padding: 100px 20px; text-align: center;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: var(--white);
 }
+.hero h1 { font-size: 2.8rem; margin-top: 0; }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-  margin-top: 0;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
-}
-
-/* 通用容器 */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
+.container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
 .container h2 {
-  text-align: center;
-  color: var(--primary);
-  font-size: 2rem;
-  margin-bottom: 40px;
-  position: relative;
+  text-align: center; color: var(--primary); font-size: 2rem; margin-bottom: 40px;
 }
-
 .container h2::after {
-  content: '';
-  width: 60px;
-  height: 4px;
-  background: var(--accent);
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 2px;
+  content: ''; width: 60px; height: 4px; background: var(--accent); display: block; margin: 10px auto 0; border-radius: 2px;
 }
 
-/* 网格与卡片 */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .card {
-  background: var(--white);
-  padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #f1f5f9;
+  background: var(--white); padding: 40px 30px; border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); border: 1px solid #f1f5f9;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-  color: var(--primary);
-  margin-top: 0;
-  font-size: 1.4rem;
-}
-
-/* 按钮样式 */
 .btn {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--white);
-  padding: 14px 28px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.4);
+  display: inline-block; background: var(--accent); color: var(--white);
+  padding: 14px 28px; border-radius: 50px; text-decoration: none;
+  font-weight: 600; border: none; cursor: pointer;
 }
 
-.btn:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-}
-
-/* 课程表区特殊调整 */
-.schedule p {
-  font-size: 1.1rem;
-  padding: 10px 0;
-  border-bottom: 1px solid #f1f5f9;
-  margin: 0;
-}
-.schedule p:last-child {
-  border-bottom: none;
-}
-.schedule .card {
-  max-width: 600px;
-  margin: 0 auto;
+/* Facebook News 容器 */
+.fb-container {
+  display: flex; justify-content: center; background: white; padding: 20px; border-radius: 16px;
 }
 
 /* 表单样式 */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
+form { display: flex; flex-direction: column; gap: 15px; }
 form input, form textarea {
-  width: 100%;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #cbd5e1;
-  font-size: 1rem;
-  font-family: inherit;
-  background: #f8fafc;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: inherit;
 }
+.form-card { max-width: 600px; margin: 0 auto; }
 
-form input:focus, form textarea:focus {
-  outline: none;
-  border-color: var(--primary-light);
-  box-shadow: 0 0 0 3px rgba(30, 90, 158, 0.1);
-  background: var(--white);
+/* AI 悬浮助手 */
+.ai-fab {
+  position: fixed; bottom: 30px; right: 30px;
+  background: var(--accent); color: white;
+  width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; cursor: pointer; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
+  z-index: 9999; transition: transform 0.3s;
 }
+.ai-fab:hover { transform: scale(1.1); }
 
-form textarea {
-  resize: vertical;
-  min-height: 100px;
+.ai-window {
+  position: fixed; bottom: 100px; right: 30px;
+  width: 320px; height: 450px; background: white;
+  border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: none; flex-direction: column; overflow: hidden; z-index: 9999;
 }
+.ai-header {
+  background: var(--primary); color: white; padding: 15px;
+  display: flex; justify-content: space-between; align-items: center; font-weight: bold;
+}
+.ai-header span { cursor: pointer; font-size: 20px; }
+.ai-body { flex: 1; padding: 15px; overflow-y: auto; background: #f0f4f8; display: flex; flex-direction: column; gap: 10px;}
+.ai-msg { background: white; padding: 10px 15px; border-radius: 15px 15px 15px 0; font-size: 0.9rem; align-self: flex-start; max-width: 85%; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
+.user-msg { background: var(--primary-light); color: white; padding: 10px 15px; border-radius: 15px 15px 0 15px; font-size: 0.9rem; align-self: flex-end; max-width: 85%;}
+.ai-footer { padding: 10px; background: white; display: flex; border-top: 1px solid #ddd; }
+.ai-footer input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 20px; outline: none; }
+.ai-footer button { background: var(--accent); color: white; border: none; padding: 10px 15px; margin-left: 10px; border-radius: 20px; cursor: pointer; }
 
-.form-card {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-#confirm {
-  color: #10b981;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 15px;
-}
-
-/* 家长空间 */
-.login-box {
-  max-width: 450px;
-  margin: auto;
-}
-
-.dashboard {
-  display: none;
-  max-width: 800px;
-  margin: 40px auto 0;
-  background: var(--white);
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-}
-
-.invoice {
-  background: #f8fafc;
-  padding: 30px;
-  border: 1px dashed #cbd5e1;
-  border-radius: 8px;
-  margin-top: 30px;
-  color: var(--text-main);
-}
-
-.invoice h3 {
-  margin-top: 0;
-  color: var(--primary);
-}
-
-/* 页脚 */
-footer {
-  background: var(--primary);
-  color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 30px;
-  margin-top: 60px;
-  font-size: 0.9rem;
-}
-
-@media(max-width: 768px) {
-  header h1 { font-size: 1.8rem; }
-  .hero h1 { font-size: 2.2rem; }
-  nav a { padding: 12px 16px; font-size: 0.9rem; }
-  .container { padding: 40px 15px; }
-}
+footer { background: var(--primary); color: white; text-align: center; padding: 30px; margin-top: 60px; }
 </style>
 </head>
 
 <body>
 
+<div class="lang-switcher">
+  <button class="active" onclick="switchLang('fr')">FR</button>
+  <button onclick="switchLang('zh')">中文</button>
+  <button onclick="switchLang('en')">EN</button>
+</div>
+
 <header>
   <h1>乐学双语俱乐部</h1>
   <h2>CLUB BILINGUE PLAISIR & SAVOIR</h2>
-  <p>Apprendre le chinois et découvrir la culture chinoise</p>
+  <p class="lang-fr">Apprendre le chinois et découvrir la culture chinoise</p>
+  <p class="lang-zh">学习中文，探索中华文化</p>
+  <p class="lang-en">Learn Chinese and discover Chinese culture</p>
 </header>
 
 <nav>
-  <a href="#about">Association</a>
-  <a href="#program">Programme</a>
-  <a href="#schedule">Horaires</a>
-  <a href="#register">Inscription</a>
-  <a href="#parents">Parents</a>
-  <a href="#contact">Contact</a>
+  <a href="#about"><span class="lang-fr">Association</span><span class="lang-zh">关于我们</span><span class="lang-en">About Us</span></a>
+  <a href="#news"><span class="lang-fr">Actualités</span><span class="lang-zh">最新动态</span><span class="lang-en">News</span></a>
+  <a href="#program"><span class="lang-fr">Programme</span><span class="lang-zh">课程介绍</span><span class="lang-en">Program</span></a>
+  <a href="#register"><span class="lang-fr">Inscription</span><span class="lang-zh">在线报名</span><span class="lang-en">Register</span></a>
+  <a href="#contact"><span class="lang-fr">Contact</span><span class="lang-zh">联系我们</span><span class="lang-en">Contact</span></a>
 </nav>
 
 <section class="hero">
-  <h1>École de chinois pour enfants</h1>
-  <p>Langue • Culture • Calligraphie</p>
-  <a class="btn" href="#register">Inscrire mon enfant</a>
+  <h1 class="lang-fr">École de chinois pour enfants</h1>
+  <h1 class="lang-zh">少儿中文学校</h1>
+  <h1 class="lang-en">Chinese School for Kids</h1>
+  <p><span class="lang-fr">Langue • Culture • Calligraphie</span><span class="lang-zh">语言 • 文化 • 书法</span><span class="lang-en">Language • Culture • Calligraphy</span></p>
+  <a class="btn" href="#register"><span class="lang-fr">Inscrire mon enfant</span><span class="lang-zh">给孩子报名</span><span class="lang-en">Enroll my child</span></a>
 </section>
 
-<div class="container" id="about">
-  <h2>Présentation</h2>
-  <div class="card" style="text-align: center; max-width: 800px; margin: 0 auto;">
-    <p style="font-size: 1.2rem; color: var(--text-main);">Association culturelle pour enfants proposant des cours de chinois et des activités culturelles.</p>
+<div class="container" id="news">
+  <h2><span class="lang-fr">Actualités (Facebook)</span><span class="lang-zh">俱乐部动态</span><span class="lang-en">Latest News</span></h2>
+  <div class="fb-container">
+    <iframe <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Funesco&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
   </div>
 </div>
 
 <div class="container" id="program">
-  <h2>Nos activités</h2>
+  <h2><span class="lang-fr">Nos activités</span><span class="lang-zh">我们的课程</span><span class="lang-en">Our Activities</span></h2>
   <div class="grid">
     <div class="card">
-      <h3>Cours de chinois</h3>
-      <p>Lecture, écriture et conversation.</p>
+      <h3 class="lang-fr">Cours de chinois</h3><h3 class="lang-zh">中文课</h3><h3 class="lang-en">Chinese Class</h3>
+      <p class="lang-fr">Lecture, écriture et conversation.</p>
+      <p class="lang-zh">阅读、写作与日常对话交流。</p>
+      <p class="lang-en">Reading, writing, and conversation.</p>
     </div>
     <div class="card">
-      <h3>Calligraphie</h3>
-      <p>Découverte de l'écriture chinoise traditionnelle.</p>
+      <h3 class="lang-fr">Calligraphie</h3><h3 class="lang-zh">书法课</h3><h3 class="lang-en">Calligraphy</h3>
+      <p class="lang-fr">Découverte de l'écriture chinoise traditionnelle.</p>
+      <p class="lang-zh">体验传统中国毛笔书法艺术。</p>
+      <p class="lang-en">Discover traditional Chinese writing.</p>
     </div>
-    <div class="card">
-      <h3>Culture chinoise</h3>
-      <p>Fêtes traditionnelles et activités artistiques.</p>
-    </div>
-  </div>
-</div>
-
-<div class="container schedule" id="schedule">
-  <h2>Programme du samedi</h2>
-  <div class="card">
-    <p><strong>09:30</strong> Accueil</p>
-    <p><strong>10:00</strong> Cours de chinois</p>
-    <p><strong>11:00</strong> Activités culturelles</p>
-    <p><strong>14:00</strong> Calligraphie / Peinture</p>
   </div>
 </div>
 
 <div class="container" id="register">
-  <h2>Inscription</h2>
+  <h2><span class="lang-fr">Inscription & Contact</span><span class="lang-zh">在线咨询与报名</span><span class="lang-en">Registration</span></h2>
   <div class="card form-card">
-    <form id="registerForm">
-      <input type="text" id="parent" placeholder="Nom du parent" required>
-      <input type="text" id="child" placeholder="Nom de l'enfant" required>
-      <input type="number" id="age" placeholder="Age" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <textarea id="note" placeholder="Allergies / remarques"></textarea>
-      <button class="btn" type="submit">Envoyer la demande</button>
+    <form action="https://formspree.io/f/mvzwyvnd" method="POST">
+      <input type="text" name="Parent Name" placeholder="Nom du parent / 家长姓名 / Parent Name" required>
+      <input type="text" name="Child Name" placeholder="Nom de l'enfant / 孩子姓名 / Child Name" required>
+      <input type="email" name="Email" placeholder="Votre Email / 您的邮箱 / Your Email" required>
+      <textarea name="Message" placeholder="Vos questions ou remarques... / 您的留言... / Your questions..."></textarea>
+      <button class="btn" type="submit"><span class="lang-fr">Envoyer</span><span class="lang-zh">发送信息</span><span class="lang-en">Send Message</span></button>
     </form>
-    <p id="confirm"></p>
-  </div>
-</div>
-
-<div class="container" id="parents">
-  <h2>Espace Parents</h2>
-  <div class="card login-box">
-    <form id="loginForm">
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Mot de passe" required>
-      <button class="btn">Connexion</button>
-    </form>
-  </div>
-
-  <div class="dashboard" id="dashboard">
-    <h3 style="color: var(--primary); margin-top: 0;">Tableau Parents</h3>
-    <p>Bienvenue dans l'espace parents.</p>
-    <button class="btn" onclick="generateInvoice()">Télécharger facture</button>
-    <div id="invoice" class="invoice"></div>
   </div>
 </div>
 
 <div class="container" id="contact">
   <h2>Contact</h2>
   <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
-    <p style="font-size: 1.1rem;"><strong>Email :</strong> clubbilingueps@gmail.com</p>
+    <p style="font-size: 1.1rem;">
+      <strong>Email :</strong> 
+      <a href="mailto:clubbilingueps@gmail.com" style="color: var(--primary); text-decoration: underline;">
+        clubbilingueps@gmail.com
+      </a>
+    </p>
     <p style="font-size: 1.1rem;"><strong>Ville :</strong> Paris et Vitry-sur-Seine</p>
   </div>
 </div>
@@ -388,42 +237,77 @@ footer {
   <p>© 2026 Club Bilingue Plaisir & Savoir</p>
 </footer>
 
+<div class="ai-fab" onclick="toggleAI()">💬</div>
+<div class="ai-window" id="aiWindow">
+  <div class="ai-header">
+    IA Assistant
+    <span onclick="toggleAI()">×</span>
+  </div>
+  <div class="ai-body" id="aiBody">
+    <div class="ai-msg">
+      Bonjour ! Je suis l'assistant IA de l'école. 👋<br>
+      (你好！我是乐学双语俱乐部的AI小助手。)<br><br>
+      Nous proposons des cours ludiques pour les enfants. Souhaitez-vous réserver un <b>cours d'essai gratuit</b> ?<br>
+      (我们提供沉浸式的趣味中文课，您想为孩子预约<b>免费试听课</b>吗？)
+    </div>
+  </div>
+  <div class="ai-footer">
+    <input type="text" id="aiInput" placeholder="Posez votre question / 提问..." onkeypress="handleEnter(event)">
+    <button onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
 <script>
-// Registration
-document.getElementById("registerForm").addEventListener("submit",function(e){
-  e.preventDefault();
-  const parent = document.getElementById("parent").value;
-  const child = document.getElementById("child").value;
+// 1. 多语言切换逻辑
+function switchLang(lang) {
+  // 隐藏所有语言
+  document.querySelectorAll('.lang-fr, .lang-zh, .lang-en').forEach(el => el.style.display = 'none');
+  // 显示目标语言
+  document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+  
+  // 更新按钮高亮
+  const btns = document.querySelectorAll('.lang-switcher button');
+  btns.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+}
 
-  localStorage.setItem("parent", parent);
-  localStorage.setItem("child", child);
-
-  document.getElementById("confirm").innerText = "Inscription enregistrée ✔";
+// 初始化默认显示法语
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('.lang-zh, .lang-en').forEach(el => el.style.display = 'none');
 });
 
-// Parent login demo
-document.getElementById("loginForm").addEventListener("submit",function(e){
-  e.preventDefault();
-  // Hide login box, show dashboard
-  document.querySelector('.login-box').style.display = "none";
-  document.getElementById("dashboard").style.display = "block";
-});
+// 2. AI 助手前端模拟逻辑
+function toggleAI() {
+  const win = document.getElementById('aiWindow');
+  win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+}
 
-// Invoice generator
-function generateInvoice(){
-  const parent = localStorage.getItem("parent") || "Parent";
-  const child = localStorage.getItem("child") || "Enfant";
+function handleEnter(e) {
+  if (e.key === 'Enter') sendMsg();
+}
 
-  const html = `
-    <h3>Facture</h3>
-    <p><strong>Association :</strong> Club Bilingue Plaisir & Savoir</p>
-    <p><strong>Parent :</strong> ${parent}</p>
-    <p><strong>Enfant :</strong> ${child}</p>
-    <p><strong>Objet :</strong> Cours de chinois enfants</p>
-    <p><strong>Montant :</strong> 120 €</p>
-    <p><strong>Date :</strong> ${new Date().toLocaleDateString()}</p>
-  `;
-  document.getElementById("invoice").innerHTML = html;
+function sendMsg() {
+  const input = document.getElementById('aiInput');
+  const text = input.value.trim();
+  if (!text) return;
+
+  const body = document.getElementById('aiBody');
+  // 用户发送消息
+  body.innerHTML += `<div class="user-msg">${text}</div>`;
+  input.value = '';
+  body.scrollTop = body.scrollHeight;
+
+  // 模拟 AI 回复 (前端演示版本)
+  setTimeout(() => {
+    let reply = "Merci pour votre message ! Pour réserver un cours d'essai, veuillez remplir le formulaire d'inscription sur notre site, ou nous écrire à clubbilingueps@gmail.com. (感谢留言！预约试听请填写网页上的报名表，或发送邮件给我们。)";
+    
+    if(text.toLowerCase().includes('prix') || text.includes('钱') || text.includes('费用')) {
+      reply = "Nos tarifs varient selon le niveau et l'âge de l'enfant. Laissez-nous votre email dans le formulaire et nous vous enverrons la brochure ! (我们的学费根据年龄和班级有所不同，请填写表单，我们会把价格表发给您！)";
+    }
+
+    body.innerHTML += `<div class="ai-msg">${reply}</div>`;
+    body.scrollTop = body.scrollHeight;
+  }, 1000);
 }
 </script>
 
