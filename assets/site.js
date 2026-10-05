@@ -113,3 +113,9 @@ document.getElementById('assistant-send').addEventListener('click', sendMsg);
 document.getElementById('aiInput').addEventListener('keydown', event => {
  if (event.key === 'Enter' && !event.isComposing) { event.preventDefault(); sendMsg(); }
 });
+
+function updateCourseLinks(){const lang=document.documentElement.lang;document.querySelectorAll("[data-course]").forEach(a=>{a.href="courses/"+a.dataset.course+".html?lang="+lang;});}
+new MutationObserver(updateCourseLinks).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+updateCourseLinks();
+const requestedLanguage=new URLSearchParams(location.search).get("lang");
+if(["fr","zh","en"].includes(requestedLanguage))document.querySelector("[data-language="+requestedLanguage+"]").click();
