@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Club Bilingue Plaisir & Savoir</title>
+<title>Club Bilingue Plaisir & Savoir — Langues, mathématiques et sciences à Paris</title>
+<meta name="description" content="Cours de chinois, anglais, français et mathématiques pour adultes et enfants à Paris et Vitry-sur-Seine. Sciences expérimentales pour collégiens et lycéens. Club Bilingue Plaisir &amp; Savoir : langue, culture et liens entre familles.">
+<link rel="canonical" href="https://www.biling.eu/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Club Bilingue Plaisir &amp; Savoir">
+<meta property="og:description" content="Apprendre une langue, découvrir une culture, créer des liens. Cours de chinois, anglais, français et mathématiques pour adultes et enfants à Paris et Vitry-sur-Seine. Sciences expérimentales pour collégiens et lycéens.">
+<meta property="og:url" content="https://www.biling.eu/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Club Bilingue Plaisir &amp; Savoir">
+<meta name="twitter:description" content="Cours de chinois, anglais, français et mathématiques pour adultes et enfants à Paris et Vitry-sur-Seine. Sciences expérimentales pour collégiens et lycéens.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Club Bilingue Plaisir & Savoir","alternateName":"乐学双语俱乐部","url":"https://www.biling.eu/","email":"clubbilingueps@gmail.com","areaServed":["Paris","Vitry-sur-Seine","Île-de-France"]}</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -64,8 +75,8 @@ header {
   text-align: center;
   position: relative;
 }
-header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 2px; }
-header h2 { margin: 5px 0 10px; font-size: 1.1rem; color: var(--text-light); }
+header .brand-title { color: var(--primary); font-weight: 700; margin: 0; font-size: 2.2rem; letter-spacing: 2px; }
+header .brand-subtitle { font-weight: 600; margin: 5px 0 10px; font-size: 1.1rem; color: var(--text-light); }
 header p { margin: 0; font-size: 0.95rem; color: var(--text-light); }
 
 nav {
@@ -147,78 +158,165 @@ form input, form textarea {
 .ai-footer button { background: var(--accent); color: white; border: none; padding: 10px 15px; margin-left: 10px; border-radius: 20px; cursor: pointer; }
 
 footer { background: var(--primary); color: white; text-align: center; padding: 30px; margin-top: 60px; }
+/* Foundation repairs: keep the existing brand and page structure. */
+html { scroll-padding-top: 90px; }
+.lang-fr { display: revert; }
+.lang-switcher { position: relative; top: auto; right: auto; width: fit-content; margin: 12px 20px 0 auto; }
+:focus-visible { outline: 3px solid #9a5800; outline-offset: 4px; }
+.btn { color: #102d48; }
+button { font: inherit; }
+.social-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.social-card { min-width: 0; padding: 28px; display: flex; flex-direction: column; gap: 18px; }
+.social-card h3, .social-card p { margin: 0; }
+.social-heading { display: flex; gap: 14px; align-items: center; }
+.social-mark { display: grid; place-items: center; width: 46px; height: 46px; background: #e8f0f8; border-radius: 10px; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+.social-card h3 { color: var(--primary); font-size: 1.25rem; }
+.social-note { color: #536575; font-size: .875rem; }
+.social-feed { width: 100%; max-width: 100%; min-width: 0; background: #f8fafc; border-radius: 8px; padding: 18px; }
+.social-feed iframe { display: block; width: 100%; max-width: 100%; height: 500px; border: 0; margin: 0 auto; }
+.social-feed.has-feed { padding: 0; background: transparent; }
+.social-status { min-height: 185px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.social-status strong { color: var(--primary); }
+.social-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.social-load { border-radius: 7px; padding: 11px 16px; background: var(--primary); color: white; border: 0; cursor: pointer; font-size: .875rem; font-weight: 600; }
+.social-load:hover { background: var(--primary-light); }
+.social-stop { border: 1px solid #cbd5e1; padding: 9px 12px; border-radius: 7px; background: white; cursor: pointer; font-size: .875rem; color: var(--primary); }
+.social-link { color: var(--primary); font-weight: 600; text-underline-offset: 4px; margin-top: auto; }
+.social-card [hidden] { display: none !important; }
+.about-copy { max-width: 760px; margin: 0 auto; }
+.form-label { font-size: .875rem; font-weight: 600; margin-bottom: -10px; }
+.ai-fab { border: 0; color: #102d48; }
+.ai-close { border: 0; background: transparent; color: white; font-size: 24px; cursor: pointer; }
+.ai-footer input { min-width: 0; width: 100%; outline: revert; }
+.ai-footer button { color: #102d48; }
+.ai-window { width: min(360px, calc(100vw - 32px)); height: min(450px, calc(100dvh - 150px)); }
+@media (max-width: 700px) {
+ .social-grid { grid-template-columns: minmax(0, 1fr); }
+ .container { padding: 44px 18px; }
+ .container h2 { font-size: 1.7rem; }
+ .social-card { padding: 20px; }
+ .grid { grid-template-columns: minmax(0, 1fr); }
+ .card { min-width: 0; }
+ header { padding: 28px 18px; }
+ header .brand-title { font-size: 1.8rem; letter-spacing: 1px; }
+ nav a { padding: 12px; font-size: .875rem; }
+ .hero { padding: 55px 18px; }
+ .hero h1 { font-size: 2rem; line-height: 1.3; }
+ .ai-fab { bottom: 16px; right: 16px; }
+ .ai-window { bottom: 86px; right: 16px; }
+ footer { padding-bottom: 85px; }
+ #contact a { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; transition: none !important; } }
 </style>
+<link rel="stylesheet" href="assets/discovery.css">
 </head>
 
 <body>
 
 <div class="lang-switcher">
-  <button class="active" onclick="switchLang('fr')">FR</button>
-  <button onclick="switchLang('zh')">中文</button>
-  <button onclick="switchLang('en')">EN</button>
+  <button class="active" data-language="fr" lang="fr" aria-pressed="true">FR</button>
+  <button data-language="zh" lang="zh" aria-pressed="false">中文</button>
+  <button data-language="en" lang="en" aria-pressed="false">EN</button>
 </div>
 
 <header>
-  <h1>乐学双语俱乐部</h1>
-  <h2>CLUB BILINGUE PLAISIR & SAVOIR</h2>
-  <p class="lang-fr">Apprendre le chinois et découvrir la culture chinoise</p>
-  <p class="lang-zh">学习中文，探索中华文化</p>
-  <p class="lang-en">Learn Chinese and discover Chinese culture</p>
+  <p class="brand-title">乐学双语俱乐部</p>
+  <p class="brand-subtitle">CLUB BILINGUE PLAISIR &amp; SAVOIR</p>
+  <p class="lang-fr">Apprendre une langue, découvrir une culture, créer des liens.</p>
+  <p class="lang-zh">学习语言，探索文化，建立连接。</p>
+  <p class="lang-en">Learn a language, discover a culture, build connections.</p>
 </header>
 
 <nav>
   <a href="#about"><span class="lang-fr">Association</span><span class="lang-zh">关于我们</span><span class="lang-en">About Us</span></a>
-  <a href="#news"><span class="lang-fr">Actualités</span><span class="lang-zh">最新动态</span><span class="lang-en">News</span></a>
   <a href="#program"><span class="lang-fr">Programme</span><span class="lang-zh">课程介绍</span><span class="lang-en">Program</span></a>
   <a href="#register"><span class="lang-fr">Inscription</span><span class="lang-zh">在线报名</span><span class="lang-en">Register</span></a>
+  <a href="#agenda"><span class="lang-fr">Agenda local</span><span class="lang-zh">本地活动</span><span class="lang-en">Local events</span></a>
+  <a href="#wechat"><span class="lang-fr">WeChat</span><span class="lang-zh">微信内容</span><span class="lang-en">WeChat</span></a>
+  <a href="#news"><span class="lang-fr">Actualités</span><span class="lang-zh">最新动态</span><span class="lang-en">News</span></a>
   <a href="#contact"><span class="lang-fr">Contact</span><span class="lang-zh">联系我们</span><span class="lang-en">Contact</span></a>
 </nav>
 
 <section class="hero">
-  <h1 class="lang-fr">École de chinois pour enfants</h1>
-  <h1 class="lang-zh">少儿中文学校</h1>
-  <h1 class="lang-en">Chinese School for Kids</h1>
-  <p><span class="lang-fr">Langue • Culture • Calligraphie</span><span class="lang-zh">语言 • 文化 • 书法</span><span class="lang-en">Language • Culture • Calligraphy</span></p>
-  <a class="btn" href="#register"><span class="lang-fr">Inscrire mon enfant</span><span class="lang-zh">给孩子报名</span><span class="lang-en">Enroll my child</span></a>
+  <h1 class="lang-fr">Des langues, des savoirs, des rencontres.</h1>
+  <h1 class="lang-zh">学习语言，探索知识，共同成长。</h1>
+  <h1 class="lang-en">Languages, knowledge and connections.</h1>
+  <p><span class="lang-fr">Paris &amp; Île-de-France · Enfants, adolescents et adultes</span><span class="lang-zh">巴黎及周边地区 · 儿童、青少年与成人</span><span class="lang-en">Paris &amp; Île-de-France · Children, teenagers and adults</span></p>
+  <p><span class="lang-fr">Langues • Mathématiques • Sciences</span><span class="lang-zh">语言 • 数学 • 科学</span><span class="lang-en">Languages • Mathematics • Science</span></p>
+  <a class="btn" href="#register"><span class="lang-fr">Découvrir les cours et s’inscrire</span><span class="lang-zh">课程咨询与报名</span><span class="lang-en">Course enquiries and registration</span></a>
 </section>
 
-<div class="container" id="news">
-  <h2><span class="lang-fr">Actualités (Facebook)</span><span class="lang-zh">俱乐部动态</span><span class="lang-en">Latest News</span></h2>
-  <div class="fb-container">
-    <iframe <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Funesco&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-  </div>
-</div>
+<section class="container" id="about"><h2><span class="lang-fr">Notre association</span><span class="lang-zh">关于俱乐部</span><span class="lang-en">Our Association</span></h2><div class="about-copy"><p><span class="lang-fr">Apprendre une langue, découvrir une culture, créer des liens.</span><span class="lang-zh">以语言、文化与科学知识连接不同年龄的学习者。</span><span class="lang-en">Learn a language, discover a culture, build connections.</span></p><p><span class="lang-fr">Le Club Bilingue Plaisir &amp; Savoir accompagne les enfants, adolescents et adultes dans l’apprentissage des langues, des mathématiques et des sciences à Paris et Vitry-sur-Seine.</span><span class="lang-zh">乐学双语俱乐部在巴黎与塞纳河畔维特里开展面向儿童、青少年及成人的语言、数学与科学学习活动。</span><span class="lang-en">Club Bilingue Plaisir &amp; Savoir supports children, teenagers and adults in learning languages, mathematics and science in Paris and Vitry-sur-Seine.</span></p></div></section>
 
-<div class="container" id="program">
-  <h2><span class="lang-fr">Nos activités</span><span class="lang-zh">我们的课程</span><span class="lang-en">Our Activities</span></h2>
-  <div class="grid">
-    <div class="card">
-      <h3 class="lang-fr">Cours de chinois</h3><h3 class="lang-zh">中文课</h3><h3 class="lang-en">Chinese Class</h3>
-      <p class="lang-fr">Lecture, écriture et conversation.</p>
-      <p class="lang-zh">阅读、写作与日常对话交流。</p>
-      <p class="lang-en">Reading, writing, and conversation.</p>
-    </div>
-    <div class="card">
-      <h3 class="lang-fr">Calligraphie</h3><h3 class="lang-zh">书法课</h3><h3 class="lang-en">Calligraphy</h3>
-      <p class="lang-fr">Découverte de l'écriture chinoise traditionnelle.</p>
-      <p class="lang-zh">体验传统中国毛笔书法艺术。</p>
-      <p class="lang-en">Discover traditional Chinese writing.</p>
-    </div>
-  </div>
-</div>
+<section class="container" id="program"><h2><span class="lang-fr">Nos cours</span><span class="lang-zh">课程介绍</span><span class="lang-en">Our courses</span></h2><p class="about-copy"><span class="lang-fr">Chinois, anglais, français et mathématiques pour adultes et enfants de différents âges. Des sciences expérimentales sont également proposées aux collégiens et lycéens.</span><span class="lang-zh">为成人及各年龄段孩子提供中文、英语、法语和数学课程；为初中、高中学生提供科学实践课程。</span><span class="lang-en">Chinese, English, French and mathematics for adults and children across age groups, with practical science for secondary school students.</span></p><div class="grid"><article class="card"><h3><span class="lang-fr">Chinois</span><span class="lang-zh">中文课</span><span class="lang-en">Chinese</span></h3><p><span class="lang-fr">Lecture, écriture et expression orale.</span><span class="lang-zh">阅读、写作与口语交流。</span><span class="lang-en">Reading, writing and speaking.</span></p></article><article class="card"><h3><span class="lang-fr">Anglais</span><span class="lang-zh">英语课</span><span class="lang-en">English</span></h3><p><span class="lang-fr">Compréhension et expression, à l’oral comme à l’écrit.</span><span class="lang-zh">听说读写与语言运用。</span><span class="lang-en">Listening, speaking, reading and writing.</span></p></article><article class="card"><h3><span class="lang-fr">Français</span><span class="lang-zh">法语课</span><span class="lang-en">French</span></h3><p><span class="lang-fr">Pratique de la langue et développement de l’expression.</span><span class="lang-zh">法语学习与表达能力培养。</span><span class="lang-en">French language practice and communication.</span></p></article><article class="card"><h3><span class="lang-fr">Mathématiques</span><span class="lang-zh">数学课</span><span class="lang-en">Mathematics</span></h3><p><span class="lang-fr">Comprendre les notions et développer le raisonnement.</span><span class="lang-zh">理解数学概念，培养逻辑思维与解题能力。</span><span class="lang-en">Understand concepts and develop mathematical reasoning.</span></p></article><article class="card"><h3><span class="lang-fr">Sciences expérimentales</span><span class="lang-zh">科学实践课</span><span class="lang-en">Practical science</span></h3><p><span class="lang-fr">Pour les élèves du collège et du lycée : observer, expérimenter et explorer.</span><span class="lang-zh">面向初中、高中学生，通过观察、实验与探索学习科学。</span><span class="lang-en">For secondary school students: observation, experiments and exploration.</span></p></article><article class="card"><h3><span class="lang-fr">Calligraphie</span><span class="lang-zh">书法课</span><span class="lang-en">Calligraphy</span></h3><p><span class="lang-fr">Découvrir les gestes et l’esthétique de la calligraphie chinoise.</span><span class="lang-zh">体验中国书法的笔法与艺术之美。</span><span class="lang-en">Discover the techniques and aesthetics of Chinese calligraphy.</span></p></article></div><article class="card" style="margin-top:24px"><h3><span class="lang-fr">Coopérations éducatives et scientifiques</span><span class="lang-zh">教育与科研交流合作</span><span class="lang-en">Educational and scientific cooperation</span></h3><p><span class="lang-fr">Notre association entretient de bonnes relations de coopération avec l’ENS, l’École nationale supérieure de chimie de Paris, l’Académie chinoise des sciences ainsi qu’avec d’autres organismes et associations à but non lucratif.</span><span class="lang-zh">协会与 ENS、巴黎高等化学学院、中国科学院等单位及非营利组织保持良好的合作关系。</span><span class="lang-en">Our association maintains positive cooperative relationships with ENS, the École nationale supérieure de chimie de Paris, the Chinese Academy of Sciences, and other institutions and nonprofit organisations.</span></p></article><p><span class="lang-fr">Contactez-nous pour choisir un cours adapté à l’âge et au niveau, et confirmer les horaires, tarifs et places disponibles.</span><span class="lang-zh">欢迎联系协会，根据年龄与学习水平选择课程，并确认上课时间、费用与名额。</span><span class="lang-en">Contact us to choose a course suited to your age and level and confirm schedules, fees and availability.</span></p></section>
 
 <div class="container" id="register">
   <h2><span class="lang-fr">Inscription & Contact</span><span class="lang-zh">在线咨询与报名</span><span class="lang-en">Registration</span></h2>
   <div class="card form-card">
     <form action="https://formspree.io/f/mvzwyvnd" method="POST">
-      <input type="text" name="Parent Name" placeholder="Nom du parent / 家长姓名 / Parent Name" required>
-      <input type="text" name="Child Name" placeholder="Nom de l'enfant / 孩子姓名 / Child Name" required>
-      <input type="email" name="Email" placeholder="Votre Email / 您的邮箱 / Your Email" required>
-      <textarea name="Message" placeholder="Vos questions ou remarques... / 您的留言... / Your questions..."></textarea>
+      <label class="form-label" for="parent-name"><span class="lang-fr">Votre nom / nom du parent</span><span class="lang-zh">您的姓名 / 家长姓名</span><span class="lang-en">Your name / parent’s name</span></label>
+      <input type="text" id="parent-name" name="Parent Name" placeholder="Votre nom / nom du parent / 您的姓名 / 家长姓名 / Parent Name" required>
+      <label class="form-label" for="child-name"><span class="lang-fr">Nom de l’élève (si différent)</span><span class="lang-zh">学员姓名（如不同）</span><span class="lang-en">Learner’s name (if different)</span></label>
+      <input type="text" id="child-name" name="Child Name" placeholder="Nom de l’élève (si différent) / 学员姓名（如不同） / Learner name">
+      <label class="form-label" for="registration-email"><span class="lang-fr">Adresse e-mail</span><span class="lang-zh">邮箱</span><span class="lang-en">Email address</span></label>
+      <input type="email" id="registration-email" name="Email" placeholder="Votre Email / 您的邮箱 / Your Email" required>
+      <label class="form-label" for="registration-message"><span class="lang-fr">Votre message</span><span class="lang-zh">留言</span><span class="lang-en">Your message</span></label>
+      <textarea id="registration-message" name="Message" placeholder="Vos questions ou remarques... / 您的留言... / Your questions..."></textarea>
       <button class="btn" type="submit"><span class="lang-fr">Envoyer</span><span class="lang-zh">发送信息</span><span class="lang-en">Send Message</span></button>
     </form>
   </div>
 </div>
+
+<section class="discovery" id="agenda" aria-labelledby="agenda-title">
+ <div class="discovery-wrap">
+  <div class="discovery-intro"><div><p class="discovery-kicker"><span class="lang-fr">Paris &amp; autour de nous</span><span class="lang-zh">巴黎与周边</span><span class="lang-en">Paris &amp; nearby</span></p><h2 id="agenda-title"><span class="lang-fr">Des idées pour apprendre, sortir et partager.</span><span class="lang-zh">学习、出行与分享，从这里开始。</span><span class="lang-en">Discover, go out and connect.</span></h2><p><span class="lang-fr">Explorez les activités publiées sur les plateformes municipales, avec une attention particulière au chinois et à la culture chinoise.</span><span class="lang-zh">探索市政府官方平台发布的活动，优先发现中文与中国文化相关内容。</span><span class="lang-en">Explore events listed on municipal platforms, with a special focus on Chinese language and culture.</span></p></div><div class="discovery-meta"><p><span class="lang-fr">Paris, ses 20 arrondissements et les villes voisines. Sources identifiées, dates publiées et accès direct aux informations officielles.</span><span class="lang-zh">覆盖巴黎 20 个区及周边城市。每项活动均标注来源、官方日期与详情链接。</span><span class="lang-en">Paris, its 20 districts and neighbouring cities. Identified sources, published dates and direct links to official details.</span></p><p id="agenda-updated"></p></div></div>
+  <div class="agenda-tools">
+   <div class="agenda-search"><label for="agenda-search" data-agenda-label="search">Rechercher un événement</label><input type="search" id="agenda-search" autocomplete="off" placeholder="Rechercher un événement"></div>
+   <div><label for="agenda-city" data-agenda-label="city">Ville</label><select id="agenda-city"><option value="">Toutes les villes</option></select></div>
+   <div><label for="agenda-district" data-agenda-label="district">Arrondissement</label><select id="agenda-district"><option value="">Tous les arrondissements</option><option value="1">Paris 01</option><option value="2">Paris 02</option><option value="3">Paris 03</option><option value="4">Paris 04</option><option value="5">Paris 05</option><option value="6">Paris 06</option><option value="7">Paris 07</option><option value="8">Paris 08</option><option value="9">Paris 09</option><option value="10">Paris 10</option><option value="11">Paris 11</option><option value="12">Paris 12</option><option value="13">Paris 13</option><option value="14">Paris 14</option><option value="15">Paris 15</option><option value="16">Paris 16</option><option value="17">Paris 17</option><option value="18">Paris 18</option><option value="19">Paris 19</option><option value="20">Paris 20</option></select></div>
+   <div><label for="agenda-period" data-agenda-label="period">Quand ?</label><select id="agenda-period"><option value="">À venir / en cours</option><option value="7">Dans les 7 jours</option><option value="30">Dans les 30 jours</option></select></div>
+   <label class="agenda-check"><input type="checkbox" id="agenda-free"><span data-agenda-label="freeOnly">Uniquement les événements gratuits</span></label>
+  </div>
+  <div class="agenda-tabs" role="group" aria-label="Thème / 主题 / Theme"><button type="button" data-theme="chinese" aria-pressed="true">Chinois &amp; culture</button><button type="button" data-theme="family" aria-pressed="false">Enfants &amp; familles</button><button type="button" data-theme="all" aria-pressed="false">Tous les thèmes</button></div>
+  <div class="agenda-status"><p id="agenda-count" role="status" aria-live="polite"></p><button type="button" class="agenda-refresh" id="agenda-refresh" data-agenda-label="refresh">Actualiser</button></div>
+  <p class="discovery-notice" id="agenda-warning" role="status"></p>
+  <div class="event-grid" id="event-grid"><!-- EVENT_PREVIEW_START --><!-- EVENT_PREVIEW_END --></div>
+  <button type="button" id="agenda-more" class="agenda-more" data-agenda-label="more" hidden>Afficher plus</button>
+  <p class="discovery-notice"><span class="lang-fr">Les événements sont externes au club. Le fait d’être publié sur un site municipal ne signifie pas que la mairie organise l’événement. Vérifiez les dates, les conditions et les réservations sur la fiche officielle avant de vous déplacer.</span><span class="lang-zh">这些是俱乐部之外的活动。收录于市政府平台不代表由市政府主办。出行前请通过官方活动页确认时间、费用、适用人群与预约条件。</span><span class="lang-en">These events are external to the club. Listing on a municipal platform does not imply municipal organisation. Check dates, prices, audiences and booking conditions on the official page before travelling.</span></p>
+  <p class="discovery-notice"><span data-agenda-label="original">Titres et détails dans la langue du document original.</span> <span data-agenda-label="timezone">Horaires locaux · Europe/Paris</span></p>
+  <details class="coverage"><summary><span class="lang-fr">Nos sources et leur couverture</span><span class="lang-zh">查看官方来源与覆盖情况</span><span class="lang-en">Sources and coverage</span></summary><div class="coverage-grid" id="source-directory"></div><p class="discovery-notice"><span class="lang-fr">L’agenda rassemble les données disponibles pour les 120 prochains jours. Certains flux ne publient qu’une sélection ; la couverture n’est pas exhaustive. La fraîcheur de chaque source est indiquée ci-dessus.</span><span class="lang-zh">展示未来 120 天内可读取的官方平台活动。部分来源只提供精选内容，无法保证涵盖全部活动；上方标注各来源的读取状态。</span><span class="lang-en">The calendar uses available listings for the next 120 days. Some feeds contain selected events only; coverage is not exhaustive. Each source’s refresh status is shown above.</span></p><p class="discovery-notice">Paris : <a href="https://opendata.paris.fr/explore/dataset/que-faire-a-paris-/" target="_blank" rel="noopener noreferrer">Ville de Paris · Que faire à Paris</a> · <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">ODbL 1.0</a></p></details>
+  <noscript><p class="discovery-notice">Activez JavaScript pour les filtres. Les liens officiels ci-dessous restent accessibles. · 启用 JavaScript 可使用筛选；仍可访问官方链接。</p></noscript>
+ </div>
+</section>
+<section class="wechat-section" id="wechat" aria-labelledby="wechat-title"><p class="discovery-kicker"><span class="lang-fr">La vie du club sur WeChat</span><span class="lang-zh">在微信关注俱乐部</span><span class="lang-en">Club life on WeChat</span></p><h2 id="wechat-title"><span class="lang-fr">Nos histoires, nos rencontres.</span><span class="lang-zh">我们的故事，我们的相遇。</span><span class="lang-en">Our stories, our connections.</span></h2><div class="wechat-grid"><article class="wechat-card"><h3 id="wechat-account-name"><span class="lang-fr">Notre compte officiel WeChat</span><span class="lang-zh">我们的微信公众号</span><span class="lang-en">Our WeChat Official Account</span></h3><p><span class="lang-fr">Les articles du club, les nouvelles de nos activités et les échanges autour de l’éducation bilingue.</span><span class="lang-zh">分享俱乐部文章、活动动态与双语教育交流。</span><span class="lang-en">Club articles, activity news and conversations about bilingual education.</span></p><div id="wechat-articles" class="wechat-articles"></div><p id="wechat-pending" class="wechat-pending"><span class="lang-fr">Les articles seront disponibles ici après confirmation des liens publics du compte.</span><span class="lang-zh">确认公众号及公开文章链接后，将在这里展示内容。</span><span class="lang-en">Articles will appear here once the account’s public links are confirmed.</span></p></article><article class="wechat-card"><h3><span class="lang-fr">Notre chaîne vidéo WeChat</span><span class="lang-zh">我们的微信视频号</span><span class="lang-en">Our WeChat Channels</span></h3><p><span class="lang-fr">Un autre regard sur la langue, la culture et la vie de notre communauté.</span><span class="lang-zh">以视频分享语言、文化与社区生活。</span><span class="lang-en">A fresh perspective on language, culture and community life.</span></p><div id="wechat-channel-content"></div><p class="wechat-pending"><span class="lang-fr">Le lien de la chaîne et ses vidéos publiques sont en cours de confirmation.</span><span class="lang-zh">视频号主页与公开视频链接正在确认中。</span><span class="lang-en">The channel link and its public video links are awaiting confirmation.</span></p></article></div></section>
+
+<section class="container" id="news" aria-labelledby="news-heading">
+  <h2 id="news-heading"><span class="lang-fr">Actualités &amp; Réseau</span><span class="lang-zh">最新动态与国际文化资讯</span><span class="lang-en">News &amp; Cultural Resources</span></h2>
+  <div class="social-grid">
+    <article class="card social-card" data-source="club">
+      <div class="social-heading"><span class="social-mark" aria-hidden="true">CB</span><h3><span class="lang-fr">Actualités du Club Bilingue</span><span class="lang-zh">俱乐部最新动态</span><span class="lang-en">Club Bilingue News</span></h3></div>
+      <p><span class="lang-fr">La vie du club et les échanges entre familles.</span><span class="lang-zh">了解俱乐部活动与家庭交流。</span><span class="lang-en">Club life and connections between families.</span></p>
+      <div class="social-feed social-status">
+        <strong><span class="lang-fr">Fil du club en attente</span><span class="lang-zh">俱乐部动态待确认</span><span class="lang-en">Club feed pending</span></strong>
+        <p class="social-note"><span class="lang-fr">Le lien fourni ouvre un profil personnel. Le fil automatique sera activé après confirmation de la page Facebook publique du club.</span><span class="lang-zh">当前提供的链接指向个人主页。确认俱乐部公共 Facebook Page 后即可启用自动动态。</span><span class="lang-en">The supplied link opens a personal profile. The automatic feed can be enabled once the club’s public Facebook Page is confirmed.</span></p>
+      </div>
+      <a class="social-link" href="https://www.facebook.com/profile.php?id=61578444361406" target="_blank" rel="noopener noreferrer"><span class="lang-fr">Voir sur Facebook</span><span class="lang-zh">在 Facebook 查看</span><span class="lang-en">View on Facebook</span></a>
+      <p class="social-note"><span class="lang-fr">Lien fourni à confirmer — ce n’est pas encore un fil officiel du club.</span><span class="lang-zh">提供的链接待确认，目前不是俱乐部官方动态。</span><span class="lang-en">Supplied link awaiting confirmation; this is not yet the club’s official feed.</span></p>
+    </article>
+    <article class="card social-card" data-source="unesco">
+      <div class="social-heading"><span class="social-mark" aria-hidden="true">U</span><h3><span class="lang-fr">UNESCO — ressources culturelles internationales</span><span class="lang-zh">UNESCO — 国际文化资讯</span><span class="lang-en">UNESCO — International Cultural Resources</span></h3></div>
+      <p><span class="lang-fr">Une ouverture sur l’éducation, les sciences et la culture.</span><span class="lang-zh">了解教育、科学与文化。</span><span class="lang-en">Explore education, science and culture.</span></p>
+      <div class="social-feed" id="unesco-feed">
+        <div class="social-status"><strong><span class="lang-fr">Les publications de l’UNESCO</span><span class="lang-zh">UNESCO 公开动态</span><span class="lang-en">UNESCO’s public posts</span></strong><p class="social-note"><span class="lang-fr">Cliquez pour charger le fil Facebook officiel. Les publications sont fournies directement par Facebook.</span><span class="lang-zh">点击加载 Facebook 官方动态。内容由 Facebook 直接提供并更新。</span><span class="lang-en">Load the official Facebook feed. Posts are served and updated directly by Facebook.</span></p></div>
+      </div>
+      <div class="social-controls"><button type="button" class="social-load" id="load-unesco" aria-controls="unesco-feed" aria-expanded="false"><span class="lang-fr">Afficher le fil Facebook</span><span class="lang-zh">显示 Facebook 动态</span><span class="lang-en">Load Facebook feed</span></button><button type="button" class="social-stop" id="stop-unesco" hidden><span class="lang-fr">Masquer le fil</span><span class="lang-zh">隐藏动态</span><span class="lang-en">Hide feed</span></button></div>
+      <p class="social-note"><span class="lang-fr">Charger le fil connecte votre navigateur à Facebook, qui peut utiliser des cookies. Si le fil est bloqué, utilisez le lien ci-dessous.</span><span class="lang-zh">加载动态会使浏览器连接 Facebook，Facebook 可能使用 Cookie。若动态无法显示，请使用下方链接。</span><span class="lang-en">Loading the feed connects your browser to Facebook, which may use cookies. If the feed is blocked, use the link below.</span></p>
+      <a class="social-link" href="https://www.facebook.com/unesco" target="_blank" rel="noopener noreferrer"><span class="lang-fr">Voir sur Facebook</span><span class="lang-zh">在 Facebook 查看</span><span class="lang-en">View on Facebook</span></a>
+      <p class="social-note"><span class="lang-fr">Ressource publique externe ; aucune affiliation avec l’UNESCO n’est revendiquée.</span><span class="lang-zh">外部公开资讯；不代表俱乐部与 UNESCO 存在合作关系。</span><span class="lang-en">External public resource; no affiliation with UNESCO is claimed.</span></p>
+    </article>
+  </div>
+</section>
 
 <div class="container" id="contact">
   <h2>Contact</h2>
@@ -229,6 +327,7 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
         clubbilingueps@gmail.com
       </a>
     </p>
+    <p style="font-size: 1.1rem;"><strong><span class="lang-fr">WeChat :</span><span class="lang-zh">微信：</span><span class="lang-en">WeChat:</span></strong> <span>Beyonce5819</span></p>
     <p style="font-size: 1.1rem;"><strong>Ville :</strong> Paris et Vitry-sur-Seine</p>
   </div>
 </div>
@@ -237,79 +336,25 @@ footer { background: var(--primary); color: white; text-align: center; padding: 
   <p>© 2026 Club Bilingue Plaisir & Savoir</p>
 </footer>
 
-<div class="ai-fab" onclick="toggleAI()">💬</div>
+<button type="button" class="ai-fab" id="assistant-toggle" aria-label="Bilingue Assistant" aria-expanded="false" aria-controls="aiWindow">💬</button>
 <div class="ai-window" id="aiWindow">
   <div class="ai-header">
-    IA Assistant
-    <span onclick="toggleAI()">×</span>
+    Bilingue Assistant
+    <button type="button" class="ai-close" id="assistant-close" aria-label="Fermer / 关闭 / Close">×</button>
   </div>
-  <div class="ai-body" id="aiBody">
-    <div class="ai-msg">
-      Bonjour ! Je suis l'assistant IA de l'école. 👋<br>
-      (你好！我是乐学双语俱乐部的AI小助手。)<br><br>
-      Nous proposons des cours ludiques pour les enfants. Souhaitez-vous réserver un <b>cours d'essai gratuit</b> ?<br>
-      (我们提供沉浸式的趣味中文课，您想为孩子预约<b>免费试听课</b>吗？)
-    </div>
+  <div class="ai-body" id="aiBody" role="log" aria-live="polite" aria-label="Conversation">
+    <div class="ai-msg"><span class="lang-fr">Bonjour ! Je suis le guide du club. Je peux vous orienter vers les cours, l’inscription et les coordonnées. Pour les horaires, les tarifs ou les places disponibles, contactez le club.</span><span class="lang-zh">您好！我是俱乐部指南，可以帮助您了解课程、报名方式与联系方式。上课时间、学费与名额请联系俱乐部确认。</span><span class="lang-en">Hello! I’m the club guide. I can help with classes, registration and contact details. Please contact the club to confirm schedules, fees and availability.</span><br><small><span class="lang-fr">Réponses automatiques à partir des informations du site.</span><span class="lang-zh">根据网站信息提供自动回复。</span><span class="lang-en">Automatic replies based on information on this website.</span></small></div>
   </div>
   <div class="ai-footer">
-    <input type="text" id="aiInput" placeholder="Posez votre question / 提问..." onkeypress="handleEnter(event)">
-    <button onclick="sendMsg()">➤</button>
+    <input type="text" id="aiInput" aria-label="Question / 提问" maxlength="1000" placeholder="Posez votre question / 提问..." >
+    <button type="button" id="assistant-send" aria-label="Envoyer / 发送 / Send">➤</button>
   </div>
 </div>
 
-<script>
-// 1. 多语言切换逻辑
-function switchLang(lang) {
-  // 隐藏所有语言
-  document.querySelectorAll('.lang-fr, .lang-zh, .lang-en').forEach(el => el.style.display = 'none');
-  // 显示目标语言
-  document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
-  
-  // 更新按钮高亮
-  const btns = document.querySelectorAll('.lang-switcher button');
-  btns.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-}
-
-// 初始化默认显示法语
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelectorAll('.lang-zh, .lang-en').forEach(el => el.style.display = 'none');
-});
-
-// 2. AI 助手前端模拟逻辑
-function toggleAI() {
-  const win = document.getElementById('aiWindow');
-  win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
-}
-
-function handleEnter(e) {
-  if (e.key === 'Enter') sendMsg();
-}
-
-function sendMsg() {
-  const input = document.getElementById('aiInput');
-  const text = input.value.trim();
-  if (!text) return;
-
-  const body = document.getElementById('aiBody');
-  // 用户发送消息
-  body.innerHTML += `<div class="user-msg">${text}</div>`;
-  input.value = '';
-  body.scrollTop = body.scrollHeight;
-
-  // 模拟 AI 回复 (前端演示版本)
-  setTimeout(() => {
-    let reply = "Merci pour votre message ! Pour réserver un cours d'essai, veuillez remplir le formulaire d'inscription sur notre site, ou nous écrire à clubbilingueps@gmail.com. (感谢留言！预约试听请填写网页上的报名表，或发送邮件给我们。)";
-    
-    if(text.toLowerCase().includes('prix') || text.includes('钱') || text.includes('费用')) {
-      reply = "Nos tarifs varient selon le niveau et l'âge de l'enfant. Laissez-nous votre email dans le formulaire et nous vous enverrons la brochure ! (我们的学费根据年龄和班级有所不同，请填写表单，我们会把价格表发给您！)";
-    }
-
-    body.innerHTML += `<div class="ai-msg">${reply}</div>`;
-    body.scrollTop = body.scrollHeight;
-  }, 1000);
-}
-</script>
+<script src="assets/site.js" defer></script>
+<script src="assets/content-snapshot.js" defer></script>
+<script src="assets/wechat-snapshot.js" defer></script>
+<script src="assets/discovery.js" defer></script>
 
 </body>
 </html>
